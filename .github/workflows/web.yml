@@ -1,0 +1,39 @@
+# name: Web Build
+# on:
+#   push:
+#     branches:
+#       - master
+# jobs:
+#   build:
+#     name: Web Build
+#     env:
+#       my_secret: ${{secrets.TOKEN}}
+#     # This job will run on macos virtual machine
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v1
+#       # Setup the flutter environment.
+#       - uses: subosito/flutter-action@v1
+#         with:
+#           channel: stable
+#           flutter-version: '2.8.1'
+#       - run: flutter config --enable-web
+#       - run: flutter clean
+#       - run: flutter pub get
+#       # Flutter web release command.
+#       - run: flutter build web --release
+#       - run: |
+#           cd build/web
+#           git init
+#           # type configurations: your user.email and user.name followed lines 
+#           # git config --global user.email your_email 
+#           # git config --global user.name your_name 
+#           git config --global user.email sabikrahat72428@gmail.com
+#           git config --global user.name sabikrahat
+#           git status
+#           # change this remote url for examle your remote url is https://github.com/sabikrahat/kick_start.git then the following:
+#           git remote add origin https://${{secrets.TOKEN}}@github.com/sabikrahat/kick_start.git
+#           git checkout -b gh-pages
+#           git add --all
+#           git commit -m "update"
+#           git push origin gh-pages -f

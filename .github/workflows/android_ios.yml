@@ -1,0 +1,50 @@
+# name: "Build & Release"
+
+# # This workflow is triggered on pushes to the repository.
+
+# on:
+#   push:
+#     branches:
+#       - main
+#       - master
+#       - develop
+# jobs:
+#   build:
+#     name: Build & Release
+#     # This job will run on macos virtual machine
+#     runs-on: macos-latest
+#     steps:
+#       # Setup Java environment in order to build the Android app.
+#       - uses: actions/checkout@v1
+#       - uses: actions/setup-java@v1
+#         with:
+#           java-version: '12.x'
+#       # Setup the flutter environment.
+#       - uses: subosito/flutter-action@v1
+#         with:
+#           channel: stable
+#           flutter-version: '2.8.1'
+#       # Get flutter clean.
+#       - run: flutter clean
+#       # Get flutter dependencies.
+#       - run: flutter pub get
+#       # For testing flutter widget.
+#       # - run: flutter test
+#       # Flutter android apk build command.
+#       - run: flutter build apk --debug --split-per-abi
+#       # Flutter ios ipa build command.
+#       - run: |
+#           flutter build ios --no-codesign
+#           cd build/ios/iphoneos
+#           mkdir Payload
+#           cd Payload
+#           ln -s ../Runner.app
+#           cd ..
+#           zip -r app.ipa Payload
+#       # Upload generated apk to the artifacts.
+#       - name: Push to Releases
+#         uses: ncipollo/release-action@v1
+#         with:
+#           artifacts: "build/app/outputs/apk/debug/*,build/ios/iphoneos/app.ipa"
+#           tag: v1.0.${{ github.run_number }}
+#           token: ${{ secrets.TOKEN }}
