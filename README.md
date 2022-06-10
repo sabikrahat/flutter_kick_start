@@ -1,4 +1,4 @@
-# Flutter Kick Start Project Pattern
+# Flutter Kick Start Project Pattern [[Provider](https://pub.dev/packages/provider) & [Hive](https://docs.hivedb.dev/)]
 
 A new Flutter project where basically show a pattern that used I follow. This pattern isn't fully made by me. I gather some ideas from various sources and seniors. After that, I merge those ideas according to my own opinion to make it more understandable to the beginner as I'm also a beginner.
 
