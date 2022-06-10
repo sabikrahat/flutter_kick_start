@@ -8,6 +8,12 @@ Hope you like it.
 
 <br>
 
+## Commands:
+
+- project create: flutter create -a java -i swift --org com.sabikrahat project_app
+
+- model creation: flutter packages pub run build_runner build --delete-conflicting-outputs
+
 ## For more information:
 - [Personal Info](https://sabikrahat.github.io/)
 
