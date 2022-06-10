@@ -1,4 +1,4 @@
-# Flutter Kick Start Project Pattern [[Provider](https://pub.dev/packages/provider) & [Hive](https://docs.hivedb.dev/)]
+# Flutter Kick Start Project Pattern [[Riverpod](https://riverpod.dev/) & [Isar](https://isar.dev/)]
 
 A new Flutter project where basically show a pattern that used I follow. This pattern isn't fully made by me. I gather some ideas from various sources and seniors. After that, I merge those ideas according to my own opinion to make it more understandable to the beginner as I'm also a beginner.
 
@@ -13,6 +13,12 @@ Hope you like it.
 
 <br>
 
+## Commands:
+
+- project create: flutter create -t skeleton -a java -i swift --org com.sabikrahat project_app
+
+- model creation: flutter packages pub run build_runner build --delete-conflicting-outputs
+
 ## Preview
 
-![Preview](https://raw.githubusercontent.com/sabikrahat/flutter_kick_start/master/sample.png)
+![Preview](https://raw.githubusercontent.com/sabikrahat/flutter_kick_start/pattern_2_riverpod_isar/sample.png)

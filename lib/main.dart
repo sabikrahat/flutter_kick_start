@@ -1,56 +1,15 @@
-import 'package:flutter/material.dart'
-    show
-        BuildContext,
-        Key,
-        MaterialApp,
-        StatelessWidget,
-        Widget,
-        WidgetsFlutterBinding,
-        runApp;
-import 'package:flutter/services.dart' show SystemChrome;
-import 'package:flutter_easyloading/flutter_easyloading.dart' show EasyLoading;
-import 'package:hive_flutter/hive_flutter.dart';
-import 'package:provider/provider.dart' show MultiProvider, Provider;
 
-import 'database/functions.dart' show HiveFuntions;
-import 'helpers/themes/themes.dart' show uiConfig;
-import 'providers/providers.dart' show providers;
-import 'providers/theme/theme.dart' show ThemeProvider;
-import 'screens/wrapper.dart' show Wrapper;
+import 'package:flutter/material.dart' show runApp;
+import 'package:flutter_riverpod/flutter_riverpod.dart' show ProviderScope;
 
-Future<void> main() async {
-  await _init();
-  runApp(
-    MultiProvider(
-      providers: providers,
-      child: const Main(),
-    ),
-  );
-}
+import 'src/app.dart' show App;
+import 'src/configs/ip_configs.dart' show configIpsUrls;
+import 'src/db/db.dart' show openAppDB;
+import 'src/utils/paths/paths.dart' show initDir;
 
-Future<void> _init() async {
-  await Hive.initFlutter();
-  HiveFuntions.registerHiveAdepters();
-  await HiveFuntions.openAllBoxes();
-  WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setSystemUIOverlayStyle(uiConfig);
-}
-
-class Main extends StatelessWidget {
-  const Main({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    var _theme = Provider.of<ThemeProvider>(context);
-
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: _theme.theme,
-      home: Wrapper(),
-      builder: EasyLoading.init(),
-    );
-  }
+void main() async {
+  await initDir();
+  await openAppDB();
+  await configIpsUrls();
+  runApp(const ProviderScope(child: App()));
 }

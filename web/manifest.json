@@ -1,6 +1,6 @@
 {
-    "name": "flutter_kick_start",
-    "short_name": "flutter_kick_start",
+    "name": "tailoring_app",
+    "short_name": "tailoring_app",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

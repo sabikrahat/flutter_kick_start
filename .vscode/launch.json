@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "kick_start",
+            "name": "tailoring_app",
             "request": "launch",
             "type": "dart",
             "flutterMode": "debug"

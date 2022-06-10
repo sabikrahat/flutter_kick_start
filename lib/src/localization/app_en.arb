@@ -1,0 +1,26 @@
+{
+  "appTitle": "tailoring_app",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "home": "Home",
+  "@home": {
+    "description": "Home"
+  },
+  "setting": "Setting",
+  "@setting": {
+    "description": "Setting"
+  },
+  "changeThemeToLight": "Change Theme to Light",
+  "@changeThemeToLight": {
+    "description": "Change Theme to Light"
+  },
+  "changeThemeToDark": "Change Theme to Dark",
+  "@changeThemeToDark": {
+    "description": "Change Theme to Dark"
+  },
+  "loading": "Loading...",
+  "@loading": {
+    "description": "Loading..."
+  }
+}
